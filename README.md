@@ -4,7 +4,7 @@
 
 <h1>Setup Development Environment</h1>
 
-##The following article is a guide for Ubuntu Operating System.
+<b>The following article is a guide for Ubuntu Operating System.
 
 
 ## Update OS
