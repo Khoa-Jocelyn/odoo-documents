@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="patient_tree_views" model="ir.ui.view">
+		<field name='name'>patient.tree_view</field>
+		<field name="model">hospital.patient</field>
+		<field name='arch' type='xml'>
+			<tree string="Patient">
+				<field name="name" />
+				<field name="age" />
+				<field name="day_of_birth" />
+				<field name="gender" />
+				<field name="image" />
+				<field name="health_status" />
+				<field name="hospital_admission_date" />
+				<field name="hospital_discharge_date" />
+				<field name="note" />
+			</tree>
+		</field>
+	</record>
+
+	<record id="patient_form_views" model="ir.ui.view">
+		<field name='name'>patient.form_view</field>
+		<field name="model">hospital.patient</field>
+		<field name='arch' type='xml'>
+			<form string="Patient">
+				<sheet>
+					<field name="image" widget="image" class="oe_avatar" />
+					<div class="oe_title">
+						<label for="name"></label>
+						<h1>
+							<field name="name" />
+						</h1>
+					</div>
+					<group>
+						<group>
+							<field name="age" />
+							<field name="day_of_birth" />
+							<field name="gender" />
+							<field name="health_status" />
+						</group>
+						<group>
+							<field name="hospital_admission_date" />
+							<field name="hospital_discharge_date" />
+							<field name="note" />
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="patient_action" model="ir.actions.act_window">
+		<field name="name">Patients</field>
+		<field name="res_model">hospital.patient</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<menuitem id="hospital_menu" name="Hospital" groups="base.group_user" />
+	<menuitem id="patient_menu" name="Patients"
+		parent="hospital_menu" action="patient_action" groups="base.group_user" />
+</odoo>
