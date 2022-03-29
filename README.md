@@ -147,5 +147,9 @@ sudo apt install default-jre
 
 ```sh
  git clone <SSH_repository_odoo_link> --depth 1 -b 14.0.
- ```
+```
+## Create odoo module new
 
+```sh
+./odoo-bin scaffold <module-name> <folder-path-to-save-module>
+```
