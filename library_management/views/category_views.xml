@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="category_tree_views" model="ir.ui.view">
+		<field name='name'>category.tree_view</field>
+		<field name="model">library.category</field>
+		<field name='arch' type='xml'>
+			<tree string="Categorys">
+				<field name="name" />
+				<field name="book_id" />
+				<field name="note" />
+			</tree>
+		</field>
+	</record>
+
+	<record id="category_form_views" model="ir.ui.view">
+		<field name='name'>category.form_view</field>
+		<field name="model">library.category</field>
+		<field name='arch' type='xml'>
+			<form string="Categorys">
+				<sheet>
+					<div class="oe_title">
+						<label for="name"></label>
+						<h1>
+							<field name="name" />
+						</h1>
+					</div>
+					<notebook>
+						<page string="Books">
+							<field name="book_id" />
+						</page>
+					</notebook>
+					<group>
+						<field name="note" />
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="category_action" model="ir.actions.act_window">
+		<field name="name">Categorys</field>
+		<field name="res_model">library.category</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<menuitem id="category_menu" name="Categorys"
+		parent="library_menu" action="category_action" groups="group_manager" />
+</odoo>

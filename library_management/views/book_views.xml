@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="book_tree_views" model="ir.ui.view">
+		<field name='name'>book.tree_view</field>
+		<field name="model">library.book</field>
+		<field name='arch' type='xml'>
+			<tree string="Books">
+				<field name="title" />
+				<field name="author_id" />
+				<field name="category_id" />
+				<field name="number_of_pages" />
+				<field name="producer_id" />
+				<field name="publishing_year" />
+				<field name="amount" />
+				<field name="image" />
+				<field name="note" />
+			</tree>
+		</field>
+	</record>
+
+	<record id="book_form_views" model="ir.ui.view">
+		<field name='name'>book.form_view</field>
+		<field name="model">library.book</field>
+		<field name='arch' type='xml'>
+			<form string="Books">
+				<sheet>
+					<field name="image" widget="image" class="oe_avatar" />
+					<div class="oe_title">
+						<label for="title"></label>
+						<h1>
+							<field name="title" />
+						</h1>
+					</div>
+					<group>
+						<group>
+							<field name="author_id" />
+							<field name="category_id" />
+							<field name="number_of_pages" />
+							<field name="producer_id" />
+						</group>
+						<group>
+							<field name="publishing_year" />
+							<field name="amount" />
+							<field name="note" />
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="book_action" model="ir.actions.act_window">
+		<field name="name">Books</field>
+		<field name="res_model">library.book</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<menuitem id="library_menu" name="Library" groups="group_manager" />
+	<menuitem id="book_menu" name="Books"
+		parent="library_menu" action="book_action" groups="group_manager" />
+</odoo>
