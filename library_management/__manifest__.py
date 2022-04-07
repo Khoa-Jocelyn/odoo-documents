@@ -12,7 +12,8 @@
     'category': 'Productivity',
     'version': '1.0',
     'depends': [
-        'base'
+        'base',
+        'mail',
     ],
     'data': [
         "security/library_management_security.xml",
@@ -21,6 +22,8 @@
         "views/author_views.xml",
         "views/category_views.xml",
         "views/producer_views.xml",
+        "data/author_data.xml",
+        "winzad/book_winzad_views.xml",
     ],
     'demo' : [],
     'images' : [

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+	<!-- Book tree view -->
 	<record id="book_tree_views" model="ir.ui.view">
 		<field name='name'>book.tree_view</field>
 		<field name="model">library.book</field>
@@ -13,11 +14,97 @@
 				<field name="publishing_year" />
 				<field name="amount" />
 				<field name="image" />
+				<field name="is_borrow" />
+				<field name="price" />
+				<field name="is_sale" />
 				<field name="note" />
 			</tree>
 		</field>
 	</record>
 
+	<!-- Book search views -->
+	<record id="book_search_view" model="ir.ui.view">
+		<field name='name'>book.search_view</field>
+		<field name="model">library.book</field>
+		<field name="arch" type="xml">
+			<search string="Books">
+				<field name="title" />
+				<group expand='0' string="Filters">
+					<filter string="Books For Borrow Filter" name="is_borrow"
+						domain="[('is_borrow', '=', True)]" />
+					<separator />
+					<filter string="Books For Sale Filter" name="is_borrow"
+						domain="[('is_sale', '=', True)]" />
+				</group>
+				<group expand='0' string='Group By'>
+					<filter string='Category' name="group_category"
+						context="{'group_by': 'category_id'}" />
+				</group>
+			</search>
+		</field>
+	</record>
+
+	<!-- Book kanban views -->
+	<record id="book_kanban_views" model="ir.ui.view">
+		<field name="name">book.kanban_views</field>
+		<field name="model">library.book</field>
+		<field name="arch" type="xml">
+			<kanban>
+				<field name="id" />
+				<field name="title" />
+				<field name="author_id" />
+				<field name="category_id" />
+				<field name="number_of_pages" />
+				<field name="producer_id" />
+				<field name="publishing_year" />
+				<field name="amount" />
+				<field name="image" />
+				<field name="is_borrow" />
+				<field name="price" />
+				<field name="is_sale" />
+				<field name="note" />
+				<templates>
+					<t t-name="kanban-box">
+						<div t-attf-class="oe_kanban_global_click">
+							<div class="o_kanban_image">
+								<img alt="Avatar"
+									t-att-src="kanban_image('library.book', 
+								'image', record.id.raw_value)" />
+							</div>
+							<div class="oe_kanban_details">
+								<ul>
+									<li>
+										<b>
+											Title:
+											<field name="title" />
+										</b>
+									</li>
+									<li>
+										Author:
+										<field name="author_id" />
+									</li>
+									<li>
+										Category:
+										<field name="category_id" />
+									</li>
+									<li>
+										Publishing year:
+										<field name="publishing_year" />
+									</li>
+									<lid>
+										Producer:
+										<field name="producer_id" />
+									</lid>
+								</ul>
+							</div>
+						</div>
+					</t>
+				</templates>
+			</kanban>
+		</field>
+	</record>
+
+	<!-- Book form view -->
 	<record id="book_form_views" model="ir.ui.view">
 		<field name='name'>book.form_view</field>
 		<field name="model">library.book</field>
@@ -37,10 +124,13 @@
 							<field name="category_id" />
 							<field name="number_of_pages" />
 							<field name="producer_id" />
+							<field name="publishing_year" />
 						</group>
 						<group>
-							<field name="publishing_year" />
+							<field name="is_borrow" />
 							<field name="amount" />
+							<field name="price" />
+							<field name="is_sale" />
 							<field name="note" />
 						</group>
 					</group>
@@ -49,12 +139,27 @@
 		</field>
 	</record>
 
+	<!-- Book action -->
 	<record id="book_action" model="ir.actions.act_window">
 		<field name="name">Books</field>
 		<field name="res_model">library.book</field>
-		<field name="view_mode">tree,form</field>
+		<field name="view_mode">search,kanban,tree,form</field>
+		<field name="help" type="html">
+			<p class="o_view_nocontent_smiling_face">
+				Create your first book
+			</p>
+		</field>
 	</record>
-	<menuitem id="library_menu" name="Library" groups="group_manager" />
-	<menuitem id="book_menu" name="Books"
-		parent="library_menu" action="book_action" groups="group_manager" />
+
+
+	<!-- Book menuitem -->
+	<menuitem id="library_menu_root" name="Library"
+		groups="group_reader" />
+
+	<menuitem id="book_menu_root" name="Books"
+		parent="library_menu_root" groups="group_reader" />
+
+	<menuitem id="book_menu" name="Books" parent="book_menu_root"
+		action="book_action" sequence="1" groups="group_reader" />
+
 </odoo>

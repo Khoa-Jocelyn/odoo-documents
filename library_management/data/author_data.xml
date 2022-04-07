@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+		<record id="author_fujio" model="library.author">
+			<field name="name">Fujiko F. Fujio - Fujimoto Hiroshi</field>
+			<field name="day_of_birth">1993-12-01</field>
+			<field name="gender">male</field>
+			<field name="introduce">
+				Năm 1944, lúc cả hai còn là học sinh tiểu học, cả
+				hai đều học khác
+				trường. Sau đó, Abiko chuyển sang trường học của
+				Fujimoto và họ thấy
+				cả hai đều có sở thích là vẽ. Sau khi học trung
+				học cơ sở, họ vẫn là
+				bạn bè mặc dù họ đã chuyển đến trường học khác
+				nhau. Trong khi họ là
+				học sinh trường trung học cơ sở (1946 - 1948),
+				họ đã đọc truyện
+				tranh của Osamu Tezuka. Khi họ đã trở thành học sinh
+				trường trung
+				học phổ thông, họ bắt đầu vẽ manga cho một nhà xuất bản.
+				Cả hai đã
+				cho ra tác phẩm đầu tay dưới cùng bút danh là Tenshi
+				Tama-chan.
+
+				Sau đó, Fujimoto vào làm ở một công ty bánh kẹo, và Abiko
+				thì làm việc
+				cho tòa soạn báo địa phương Toyama Newspaper Company của
+				nhà xuất
+				bản. Tuy nhiên, Fujimoto nhanh chóng phải nghỉ việc vì chấn
+				thương
+				do tay bị kẹt bởi máy móc. Còn Abiko thì làm quản lý, phù hợp
+				với
+				việc vẽ manga. Trong khi Abiko đã được làm việc cho công ty,
+				Fujimoto tiếp tục công việc của mình là vẽ manga. Tại thời điểm này,
+				tên của họ đã được viết dưới bút danh "Ashizuka Fujio". Năm 1953 họ
+				xuất bản tác phẩm đầu tay The Last World War. Những năm tiếp theo
+				(1954), họ đã quyết định đi đến Tokyo để trở thành họa sĩ chuyên
+				nghiệp vẽ manga. Tại Tokyo, thời kì khó khăn của họ bắt đầu. Họ liên
+				kết cùng các họa sĩ manga khác để tiếp tục công việc vẽ manga. Một
+				thời gian, Fujimoto và Abiko chuyển về căn hộ của Tokiwa-so nơi
+				Hiroo sinh sống.
+
+				Họ tiếp tục vẽ manga dù gặp khó khăn rất nhiều.
+				Nhiều nhà xuất bản đã
+				đặt đơn hàng từ họ. Họ đã trở thành một mangaka
+				nổi tiếng. Tuy
+				nhiên, họ bị mất việc làm trong thời gian từ 1955 đến
+				1956, vì năm
+				1955 họ trở về nhà ở Toyama để nghỉ ngơi, thế là họ bị
+				mất trong
+				thời hạn gần tất cả các manga. Sau đó, họ chỉ phục hồi khi
+				các nhà
+				xuất bản thật sự tin cậy. Trong 1959, họ tiếp tục ở Tokiwa
+				sau đó
+				chuyển đến Kawasaki, Kanagawa. Fujimoto đã lập gia đình năm
+				1962 (ở
+				tuổi 28). Những năm sau, Fujiko Fujio nhận được giải thưởng
+				Shogakukan Manga dành cho các manga Susume Robot và Tebukuro
+				Tecchan.
+
+				Fujimoto và Abiko thành lập Studio Zero với Shin'ichi
+				Suzuki, Shotaro
+				Ishinomori, Jiro Tsunoda và Kiyoichi Tsunoda. Sau đó
+				Fujio Akatsuka
+				tham gia và tới khi đỉnh điểm, xưởng sản xuất có đến
+				gần 80 người.
+				Họ sản xuất nhiều phim hoạt hình, ví dụ, Astro Boy.
+				Fujiko Fujio
+				tiếp tục viết manga, ví dụ Ninja Hattori-kun,
+				Kaibutsu-kun. Sau đó,
+				Abiko đã kết hôn năm 1966 ở tuổi 32.
+
+				Fujimoto
+				bắt đầu sáng tác Doraemon vào cuối năm 1969, và cùng một lúc ông
+				bắt
+				đầu hoàn chỉnh manga dành cho thanh thiếu niên. Doraemon lần đầu
+				tiên đã không thu hút sự chú ý của trẻ em. Mãi 3 năm sau, Doraemon
+				gây sự chú ý bởi loạt phim hoạt hình. Tuy nhiên, đáng tiếc Doraemon
+				không còn sự hợp tác của hai họa sĩ nữa, mà chỉ còn một họa sĩ theo
+				đến tập cuối cùng là Fujimoto. Doraemon giờ đây thực sự nổi tiếng
+				khắp thế giới không chỉ truyện tranh mà còn hoạt hình.
+			</field>
+		</record>
+
+		<record id="author_tokuda" model="library.author">
+			<field name="name">Tokuda Shigeo</field>
+			<field name="day_of_birth">1994-08-18</field>
+			<field name="gender">male</field>
+			<field name="introduce">
+				CUỘC ĐỜI VÀ SỰ NGHIỆP
+				Tokuda sinh tháng 8 năm 1934[2] và làm việc như một nhân viên đại lý du
+				lịch cho đến khi nghỉ hưu ở độ tuổi 60.[3] Theo Tokuda kể, "tôi nghỉ
+				hưu và không có gì để làm", vì vậy ông bắt đầu sự nghiệp thứ hai của
+				mình với tư cách là một diễn viên khiêu dâm. Tokuda đã mua các video
+				khiêu dâm trực tiếp từ công ty sản xuất (ông không dám đến mua trực
+				tiếp tại cửa hàng video) và đã trở thành bạn bè với một đạo diễn.
+				Người đạo diễn này đề nghị ông đóng một video khiêu dâm vì "phim
+				khiêu dâm người già" đã trở nên phổ biến.[3] Đến năm 2008, Tokuda đã
+				thực hiện hơn 350 video,[4] theo một đạo diễn "Trong thế hệ của ông
+				ấy thì Tokuda là một siêu sao".[5]
+
+				Ruby Productions, công ty sản xuất phim của ông, bắt đầu làm các phim
+				"người già" với người ở độ tuổi ba mươi nhưng sự nổi tiếng của "phim
+				khiêu dâm cho người lớn tuổi" đã khiến công ty tạo ra một dòng phim
+				với diễn viên trong độ tuổi bảy mươi và Tokuda là ngôi sao của
+				họ.[5] Tokuda đóng phim với cả các nữ diễn viên trẻ và lớn tuổi bao
+				gồm một số phim với nữ diễn viên 72 tuổi Fujiko Ito. Với số đông
+				người già ở Nhật Bản với nhiều thời gian rảnh rỗi, phim khiêu dâm
+				với người lớn tuổi đã trở thành một thị trường béo bở, chiếm khoảng
+				20-30% doanh thu phim tình dục.[1]
+
+				Nam diễn viên thường là vô danh trong các phim khiêu dâm của Nhật nhưng
+				Tokuda hiện đã có thương hiệu video cho riêng mình với công ty Ruby,
+				diễn với các nữ diễn viên khiêu dâm có lứa tuổi khác nhau.[6] Một
+				phòng thu chuyên về phim khiêu dâm người lớn là Glory Quest phát
+				hành loạt phim "star man" Maniac Training of Lolitas vào tháng 12
+				năm 2004 và khi dòng phim này trở nên nổi tiếng, đã đưa Tokuda vào
+				loạt phim này với một loạt các nữ diễn viên khiêu dâm trẻ trong loạt
+				phim Forbidden Elderly Care (Forbidden Nursing), bắt đầu từ tháng 8
+				năm 2006. Một loạt phim khác Big Tits Loving Grandfather Erotic
+				Mischief của công ty Glory Quest bắt đầu vào tháng 8 năm 2008.[7]
+				Không phải tất cả các vai diễn của Tokuda đều liên quan đến tình dục
+				và ông thích đóng những vai khác nhau. Tokuda nói rằng ông hy vọng
+				sẽ có thể tiếp tục đóng trong các phim khiêu dâm cho đến khi ông 80
+				tuổi (sau đó ông cười).[2]
+
+				Tokuda đã trở thành một hiện tượng ở phương Tây khi ông được mô tả trong
+				một phóng sự của CNN năm 2008[5] và Ruby có kế hoạch phát hành một
+				số video khiêu dâm của ông ở Hoa Kỳ.[5]
+
+				ĐỜI TƯ
+				Tokuda cao 1,60 m, đã lập gia đình, có hai con và một cháu trai. Ông nói
+				rằng vợ ông, 45 tuổi, nghi ngờ ông đóng vai diễn nào đó trong ngành
+				công nghiệp phim ảnh khiêu dâm nhưng không hỏi bất kỳ câu hỏi nào và
+				ông đã giữ bí mật vị trí "ngôi sao" của mình.[1]
+			</field>
+		</record>
+	</data>
+</odoo>

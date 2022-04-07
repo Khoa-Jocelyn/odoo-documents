@@ -142,11 +142,13 @@ ALTER USER postgres PASSWORD '<password>';
 sudo snap install --classic eclipse
 sudo apt install default-jre
 ```
-
+qx54-hu95-kpd9
 ## Clone odoo to git
 
 ```sh
  git clone <SSH_repository_odoo_link> --depth 1 -b 14.0.
+ source activate
+ pip install -r /home/khoa-jocelyn/git-clone/odoo14/requirements.txt
 ```
 ## Create odoo module new
 

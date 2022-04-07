@@ -18,7 +18,7 @@ msgstr ""
 #. module: library_management
 #: model:ir.module.category,name:library_management.module_category_library
 msgid "Access Library"
-msgstr ""
+msgstr "Quyền truy cập thư viện"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_book__amount
@@ -29,21 +29,21 @@ msgstr "Số lượng"
 #: model:ir.model.fields,field_description:library_management.field_library_book__author_id
 #: model:ir.ui.menu,name:library_management.author_menu
 msgid "Author"
-msgstr ""
+msgstr "Tác giả"
 
 #. module: library_management
 #: model:ir.actions.act_window,name:library_management.author_action
 #: model_terms:ir.ui.view,arch_db:library_management.author_form_views
 #: model_terms:ir.ui.view,arch_db:library_management.author_tree_views
 msgid "Authors"
-msgstr ""
+msgstr "Các tác giả"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_author__book_id
 #: model:ir.model.fields,field_description:library_management.field_library_category__book_id
 #: model:ir.model.fields,field_description:library_management.field_library_producer__book_id
 msgid "Book"
-msgstr ""
+msgstr "Sách"
 
 #. module: library_management
 #: model:ir.actions.act_window,name:library_management.book_action
@@ -54,12 +54,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:library_management.category_form_views
 #: model_terms:ir.ui.view,arch_db:library_management.producer_form_views
 msgid "Books"
-msgstr ""
+msgstr "Các cuốn Sách"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_book__category_id
 msgid "Category"
-msgstr ""
+msgstr "Thể loại"
 
 #. module: library_management
 #: model:ir.actions.act_window,name:library_management.category_action
@@ -67,7 +67,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:library_management.category_form_views
 #: model_terms:ir.ui.view,arch_db:library_management.category_tree_views
 msgid "Categorys"
-msgstr ""
+msgstr "Các thể loại"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_author__create_uid
@@ -75,7 +75,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:library_management.field_library_category__create_uid
 #: model:ir.model.fields,field_description:library_management.field_library_producer__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Được tạo bởi"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_author__create_date
@@ -83,17 +83,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:library_management.field_library_category__create_date
 #: model:ir.model.fields,field_description:library_management.field_library_producer__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Được tạo vào lúc"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_author__day_of_birth
 msgid "Day Of Birth"
-msgstr ""
+msgstr "Ngày sinh"
 
 #. module: library_management
 #: model:ir.module.category,description:library_management.module_category_library
 msgid "Description"
-msgstr ""
+msgstr "Mô tả"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_author__display_name
@@ -101,17 +101,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:library_management.field_library_category__display_name
 #: model:ir.model.fields,field_description:library_management.field_library_producer__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Tên hiển thị"
 
 #. module: library_management
 #: model:ir.model.fields.selection,name:library_management.selection__library_author__gender__female
 msgid "Female"
-msgstr ""
+msgstr "Nữ"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_author__gender
 msgid "Gender"
-msgstr ""
+msgstr "Giới tính"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_author__id
@@ -119,25 +119,25 @@ msgstr ""
 #: model:ir.model.fields,field_description:library_management.field_library_category__id
 #: model:ir.model.fields,field_description:library_management.field_library_producer__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_author__image
 #: model:ir.model.fields,field_description:library_management.field_library_book__image
 msgid "Image"
-msgstr ""
+msgstr "Ảnh"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_producer__infor
 #: model_terms:ir.ui.view,arch_db:library_management.producer_form_views
 msgid "Information"
-msgstr ""
+msgstr "Thông tin"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_author__introduce
 #: model_terms:ir.ui.view,arch_db:library_management.author_form_views
 msgid "Introduce"
-msgstr ""
+msgstr "Giới thiệu"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_author____last_update
@@ -145,7 +145,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:library_management.field_library_category____last_update
 #: model:ir.model.fields,field_description:library_management.field_library_producer____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Chỉnh sửa lần cuối vào lúc"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_author__write_uid
@@ -153,7 +153,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:library_management.field_library_category__write_uid
 #: model:ir.model.fields,field_description:library_management.field_library_producer__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Cập nhật cuối cùng bởi"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_author__write_date
@@ -161,12 +161,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:library_management.field_library_category__write_date
 #: model:ir.model.fields,field_description:library_management.field_library_producer__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Cập nhật vào lúc"
 
 #. module: library_management
 #: model:ir.ui.menu,name:library_management.library_menu
 msgid "Library"
-msgstr ""
+msgstr "Thư viện"
 
 #. module: library_management
 #: model:ir.model,name:library_management.model_library_author
@@ -191,19 +191,19 @@ msgstr ""
 #. module: library_management
 #: model:ir.model.fields.selection,name:library_management.selection__library_author__gender__male
 msgid "Male"
-msgstr ""
+msgstr "Nam"
 
 #. module: library_management
 #: model:res.groups,name:library_management.group_manager
 msgid "Manager"
-msgstr ""
+msgstr "Quản lý"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_author__name
 #: model:ir.model.fields,field_description:library_management.field_library_category__name
 #: model:ir.model.fields,field_description:library_management.field_library_producer__name
 msgid "Name"
-msgstr ""
+msgstr "Tên"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_author__note
@@ -211,22 +211,22 @@ msgstr ""
 #: model:ir.model.fields,field_description:library_management.field_library_category__note
 #: model:ir.model.fields,field_description:library_management.field_library_producer__note
 msgid "Note"
-msgstr ""
+msgstr "Ghi chú"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_book__number_of_pages
 msgid "Number Of Pages"
-msgstr ""
+msgstr "Số trang"
 
 #. module: library_management
 #: model:ir.model.fields.selection,name:library_management.selection__library_author__gender__other
 msgid "Other"
-msgstr ""
+msgstr "Khác"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_book__producer_id
 msgid "Producer"
-msgstr ""
+msgstr "Nhà sản xuất"
 
 #. module: library_management
 #: model:ir.actions.act_window,name:library_management.producer_action
@@ -234,24 +234,24 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:library_management.producer_form_views
 #: model_terms:ir.ui.view,arch_db:library_management.producer_tree_views
 msgid "Producers"
-msgstr ""
+msgstr "Nhà sản xuất"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_book__publishing_year
 msgid "Publishing Year"
-msgstr ""
+msgstr "Năm phát hành"
 
 #. module: library_management
 #: model:res.groups,name:library_management.group_reader
 msgid "Reader"
-msgstr ""
+msgstr "Bạn đọc"
 
 #. module: library_management
 #: model:res.groups,name:library_management.group_staff
 msgid "Staff"
-msgstr ""
+msgstr "Nhân viên"
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_book__title
 msgid "Title"
-msgstr ""
+msgstr "Tiêu đề"

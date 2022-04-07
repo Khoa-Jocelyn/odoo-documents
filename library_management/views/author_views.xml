@@ -6,7 +6,8 @@
 		<field name='arch' type='xml'>
 			<tree string="Authors">
 				<field name="name" />
-				<field name="day_of_birth" />
+				<field name="dob" />
+				<field name='age' />
 				<field name="gender" />
 				<field name="introduce" />
 				<field name="image" />
@@ -30,7 +31,8 @@
 						</h1>
 					</div>
 					<group>
-						<field name="day_of_birth" />
+						<field name="dob" />
+						<field name='age' />
 						<field name="gender" />
 					</group>
 					<notebook>
@@ -53,9 +55,14 @@
 		<field name="name">Authors</field>
 		<field name="res_model">library.author</field>
 		<field name="view_mode">tree,form</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="help" type="html">
+			<p class="o_view_nocontent_smiling_face">
+				Create your first author infor
+			</p>
+		</field>
 	</record>
-	<!-- <menuitem id="library_menu" name="Library" groups="base.group_user" 
-		/> -->
-	<menuitem id="author_menu" name="Author" parent="library_menu"
-		action="author_action" groups="group_manager" />
+	<menuitem id="author_menu" name="Author"
+		parent="book_menu_root" action="author_action"
+		groups="group_manager" />
 </odoo>

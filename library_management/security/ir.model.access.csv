@@ -1,7 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_library_book_reader,access.library_book.reader,model_library_book,group_reader,1,0,0,0
-access_library_book_staff,access.library_book.staff,model_library_book,group_staff,1,1,0,0
+access_library_book_staff,access.library_book.staff,model_library_book,group_staff,1,1,1,0
 access_library_book_manager,access.library_book.manager,model_library_book,group_manager,1,1,1,1
 access_library_category_manager,access.library_category.manager,model_library_category,group_manager,1,1,1,1
 access_library_author_manager,access.library_author.manager,model_library_author,group_manager,1,1,1,1
 access_library_producer_manager,access.library_producer.manager,model_library_producer,group_manager,1,1,1,1
+access_library_book_winzad_manager,access.library.book.winzad.manager,model_library_book_winzad,group_manager,1,1,1,1

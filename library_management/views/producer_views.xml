@@ -45,7 +45,14 @@
 		<field name="name">Producers</field>
 		<field name="res_model">library.producer</field>
 		<field name="view_mode">tree,form</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="help" type="html">
+			<p class="o_view_nocontent_smiling_face">
+				Create your first producer infor
+			</p>
+		</field>
 	</record>
 	<menuitem id="producer_menu" name="Producers"
-		parent="library_menu" action="producer_action" groups="group_manager" />
+		parent="book_menu_root" action="producer_action"
+		groups="group_manager" />
 </odoo>

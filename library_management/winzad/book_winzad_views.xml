@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="book_wizad_view" model="ir.ui.view">
+		<field name="name">book.wizad.view</field>
+		<field name="model">library.book.winzad</field>
+		<field name="arch" type="xml">
+			<form string="Batch Update author_id Field">
+				<group>
+					<field name="author_id" />
+				</group>
+				<p>
+					Apply updating on the selected record(s)?
+				</p>
+				<footer>
+					<button string="Confirm" name="multi_update_author_id"
+						type="object" default_focus="1" class="btn-primary" />
+					<button string="Cancel" class="btn-default" special="cancel" />
+				</footer>
+			</form>
+		</field>
+	</record>
+
+	<record id="action_update_multi_book_author_id"
+		model="ir.actions.act_window">
+		<field name="name">Batch Update</field>
+		<field name="res_model">library.book.winzad</field>
+		<field name="binding_model_id" ref="model_library_book" />
+		<field name="view_mode">form</field>
+		<field name="target">new</field>
+		<field name="view_id" ref="book_wizad_view" />
+	</record>
+</odoo>

@@ -2,12 +2,14 @@
 
 from odoo import fields, models, api
 
+
 class LibraryAuthor(models.Model):
     _name = 'library.author'
-    _description = 'Library Author'
+    _description = 'Library Author Model'
 
     name = fields.Char(string="Name", required=True)
-    day_of_birth = fields.Date(sring="Day Of Birth")
+    dob = fields.Date(string="Birth Day")
+    age = fields.Integer(string='Age', compute='_compute_age') 
     gender = fields.Selection([
         ("male", "Male"),
         ("female", "Female"),
@@ -17,3 +19,13 @@ class LibraryAuthor(models.Model):
     image = fields.Binary(string="Image", attachment=True)
     book_id = fields.One2many('library.book', "author_id", string="Book")
     note = fields.Text(string="Note")
+    
+    # @api.depends('dob')
+    def _compute_age(self):
+        for r in self:
+            if r.dob == False:
+                r.age = 0
+            else:
+                r.age = fields.Date.today().year - r.dob.year
+    
+
