@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="book_report_template">
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="doc">
+				<t t-call="web.external_layout">
+					<div class="page">
+						<h1>BOOKS DETAILS</h1>
+						<h2>
+							Title:
+							<span t-field="doc.title" />
+						</h2>
+						<li>
+							Author:
+							<span t-field="doc.author_id" />
+						</li>
+						<li>
+							Category:
+							<span t-field="doc.category_id" />
+						</li>
+						<li>
+							Number Of Pages:
+							<span t-field="doc.number_of_pages" />
+						</li>
+						<li>
+							Producer:
+							<span t-field="doc.producer_id" />
+						</li>
+						<li>
+							Publishing Year:
+							<span t-field="doc.publishing_year" />
+						</li>
+						<li>
+							Amount:
+							<span t-field="doc.amount" />
+						</li>
+						<li>
+							Description:
+							<span t-field="doc.note" />
+						</li>
+					</div>
+				</t>
+			</t>
+		</t>
+	</template>
+</odoo>

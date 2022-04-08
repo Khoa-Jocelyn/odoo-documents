@@ -24,6 +24,8 @@
         "views/producer_views.xml",
         "data/author_data.xml",
         "winzad/book_winzad_views.xml",
+        "report/book_report_template.xml",
+        "report/book_report.xml",
     ],
     'demo' : [],
     'images' : [

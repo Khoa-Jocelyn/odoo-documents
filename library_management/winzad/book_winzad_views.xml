@@ -22,7 +22,7 @@
 
 	<record id="action_update_multi_book_author_id"
 		model="ir.actions.act_window">
-		<field name="name">Batch Update</field>
+		<field name="name">Batch Update Author</field>
 		<field name="res_model">library.book.winzad</field>
 		<field name="binding_model_id" ref="model_library_book" />
 		<field name="view_mode">form</field>

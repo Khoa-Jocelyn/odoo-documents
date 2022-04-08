@@ -25,3 +25,4 @@ class LibraryBook(models.Model):
     amount = fields.Char(string='Amount', required=True)
     image = fields.Binary(string="Image", attachment=True)
     note = fields.Text(string="Note")
+    
