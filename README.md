@@ -79,10 +79,6 @@ git --version (check version)
 - Connecting to GitHub with SSH
 
 [Connecting to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
-
-```sh
-ssh-keygen -t rsa -b 4096 -C "your_email@domain.com"
-```
 - <b>Go to Home > Ctrl H to show hidden files and find the .ssh folder, inside there are id_rsa and id_rsa.pub files. Note: Do not share the file id_rsa.
 
 ## Install dependencies, Environment Other
