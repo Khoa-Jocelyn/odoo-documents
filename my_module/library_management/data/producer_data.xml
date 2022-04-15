@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+		<record id="producer_1" model="library.producer">
+			<field name="name">Kim Đông</field>
+		</record>
+		
+		<record id="producer_2" model="library.producer">
+			<field name="name">Tiền Phong</field>
+		</record>
+		
+		<record id="producer_3" model="library.producer">
+			<field name="name">Hoa Phượng Đỏ</field>
+		</record>
+	</data>
+</odoo>

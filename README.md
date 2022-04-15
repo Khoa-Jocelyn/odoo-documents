@@ -150,4 +150,5 @@ qx54-hu95-kpd9
 
 ```sh
 ./odoo-bin scaffold <module-name> <folder-path-to-save-module>
+git fetch khoa-jocelyn <kéo remote>
 ```
