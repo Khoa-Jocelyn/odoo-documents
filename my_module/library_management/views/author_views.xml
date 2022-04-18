@@ -60,6 +60,14 @@
 					<group>
 						<field name="note" />
 					</group>
+					<button name="get_all_book_ids" type="object"
+						string="Log All Book Ids" />
+					<button name="get_all_book_names" type="object"
+						string="Log All Book Names" />
+					<button name="sort_book_ids" type="object"
+						string="Sort Book Ids" />
+					<button name="group_by_author" type="object"
+						string="Group By Book To Author" />
 				</sheet>
 			</form>
 		</field>

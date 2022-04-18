@@ -93,4 +93,35 @@ class LibraryAuthor(models.Model):
             domain = [('name', operator, name)]
         docs = self.search(domain + args, limit=limit)
         return docs.name_get()
+    
+    @api.model
+    def name_create(self, name):
+        return models.Model.name_create(self, name)
+    
+    def get_all_book_ids(self):
+        books = self.env['library.book'].search([])
+        ids_filtered = books.filtered("id")
+        # ids_filtered = books.filtered(lambda book: book.id)
+        print("All Book Ids Filtered: ", ids_filtered)
+        return ids_filtered
+    
+    def get_all_book_names(self):
+        books = self.env['library.book'].search([])
+        names_mapped = books.mapped("title")
+        # names_mapped = books.mapped(lambda c: c.title)
+        print("All Book Names Mapped: ", names_mapped)
+        return names_mapped
 
+    def sort_book_ids(self):
+        books = self.env['library.book'].search([])
+        ids_sotred = books.sorted(key="id", reverse=True)
+        print("All Book Ids Sorted: ", ids_sotred)
+        return ids_sotred
+    
+    def group_by_author(self):
+        group_result = self.env['library.book'].read_group(
+            [('state', '=', 'still')], # domain
+            ['author_id'], # field
+            ['author_id']) # group by
+        print("Read Group: ", group_result)
+        return group_result

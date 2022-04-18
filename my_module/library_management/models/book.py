@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from odoo import fields, models, api
+from odoo import _
+from odoo.exceptions import UserError
 
 
 class LibraryBook(models.Model):
@@ -42,6 +44,8 @@ class LibraryBookExtendOther(models.Model):
     @api.model
     def create(self, values):
         """Override default Odoo create function and extend."""
+        # self.ensure_one()
+        # self.flush()
         if values.get('title'):
             values["title"] = values["title"].title()
         return super(LibraryBookExtendOther, self).create(values)
@@ -63,3 +67,24 @@ class LibraryBookExtendOther(models.Model):
                 r.total_price = r.price * r.amount
             else:
                 r.total_price = False
+    
+    @api.model
+    def is_allowed_state(self, current_state, new_state):
+        allowed_states = [('still', 'over'), ('over', 'still')]
+        return (current_state, new_state) in allowed_states
+    
+    def change_book_state(self, state):
+        for book in self:
+            if book.is_allowed_state(book.state, state):
+                book.state = state
+            else:
+                raise UserError(_("Changing book status from %s to %s is not allowed.") % (book.state, state))
+
+    def change_to_still(self):
+        self.change_book_state("still")
+    
+    def change_to_over(self):
+        self.change_book_state("over")
+        
+        
+        
