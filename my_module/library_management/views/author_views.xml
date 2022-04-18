@@ -50,9 +50,8 @@
 									<field name="publishing_year" />
 									<field name="amount" />
 									<field name="image" widget="image" class="oe_avatar" />
-									<field name="is_borrow" />
+									<field name="state" />
 									<field name="price" />
-									<field name="is_sale" />
 									<field name="note" />
 								</tree>
 							</field>

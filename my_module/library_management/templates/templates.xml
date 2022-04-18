@@ -1,0 +1,26 @@
+<odoo>
+	<template id="books">
+		<title>Library / Books</title>
+		<h1 style="text-align: center;">BOOKS</h1>
+		<t t-foreach="books" t-as="book">
+			<p style="font-size:14px;padding:1.5rem 1rem">
+				<h2>
+					Title:
+					<t t-esc="book.title" />
+				</h2>
+				<li>
+					Author:
+					<t t-esc="book.author_id.name" />
+				</li>
+				<li>
+					Producer:
+					<t t-esc="book.producer_id.name" />
+				</li>
+				<li>
+					Category:
+					<t t-esc="book.category_id.name" />
+				</li>
+			</p>
+		</t>
+	</template>
+</odoo>

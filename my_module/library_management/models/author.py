@@ -11,7 +11,7 @@ class LibraryAuthor(models.Model):
 
     name = fields.Char(string="Name", required=True)
     dob = fields.Date(string="Birth Day")
-    age = fields.Integer(string='Age', compute='_compute_age', store=True) 
+    age = fields.Integer(string='Age', compute='_compute_age', store=True, readonly=False) 
     gender = fields.Selection([
         ("male", "Male"),
         ("female", "Female"),
@@ -31,19 +31,18 @@ class LibraryAuthor(models.Model):
                 raise ValidationError("Error date of birth: %s" % r.dob)
             else:
                 r.age = fields.Date.today().year - r.dob.year
-    
+
     @api.onchange("dob")
     def _onchange_dob(self):
-        for r in self:
-            if r.dob == False:
-                r.age = 0
-            elif r.dob >= fields.Date.today():
-                raise ValidationError("Error date of birth: %s" % r.dob)
-            else:
-                r.age = fields.Date.today().year - r.dob.year
+        if self.dob == False:
+            self.age = 0
+        elif self.dob >= fields.Date.today():
+            raise ValidationError("Error date of birth: %s" % self.dob)
+        else:
+            self.age = fields.Date.today().year - self.dob.year
     
     @api.constrains("dob")
-    def constrains_dob(self):
+    def constrains_check_dob(self):
         for r in self:
             if r.dob == False:
                 r.age = 0
@@ -52,8 +51,15 @@ class LibraryAuthor(models.Model):
             else:
                 r.age = fields.Date.today().year - r.dob.year
     
-    _sql_constraints = [('name', 'unique(name)', "The name of author already exists!")]
-    _sql_constraints = [('age', 'check(age > 0)', "Error date of birth")]
+    @api.constrains('name')
+    def constrains_check_name(self):
+        for r in self:
+            existing_record = self.env['library.author'].search_count([('name', '=', r.name)])
+            if existing_record > 1:
+                raise ValidationError('The name of author already exists!')
+    
+    # _sql_constraints = [('name', 'unique(name)', "The name of author already exists!"),
+    #                     ('age', 'check(age > 0)', "Error date of birth")]
     
     @api.model
     def create(self, values):
@@ -72,20 +78,19 @@ class LibraryAuthor(models.Model):
         """Override default Odoo unlink function and extend."""
         return super(LibraryAuthor, self).unlink()
     
-    # def name_get(self):
-    #     result = []
-    #     for r in self:
-    #         name = r.name
-    #         result.append((r.name))
-    #     return result
-    #
-    # @api.model
-    # def name_search(self, name, args=None, operator="ilike", limit=100):
-    #     args = args or []
-    #     domain = []
-    #     if name:
-    #         domain = [('name', operator, name)]
-    #     docs = self.search(domain + args, limit=limit)
-    #     return docs.name_get()
+    def name_get(self):
+        res = []
+        for author in self:
+            str = "Author: " + author.name 
+            res.append((author.id, str))
+        return res
     
+    @api.model
+    def name_search(self, name, args=None, operator="ilike", limit=100):
+        args = args or []
+        domain = []
+        if name:
+            domain = [('name', operator, name)]
+        docs = self.search(domain + args, limit=limit)
+        return docs.name_get()
 

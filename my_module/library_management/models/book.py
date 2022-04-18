@@ -5,13 +5,11 @@ from odoo import fields, models, api
 
 class LibraryBook(models.Model):
     _name = 'library.book'
-    _description = 'Library Book'
+    _description = 'Library Book Model'
+    _order = 'sequence, title'
+    _rec_name = 'title'
 
     title = fields.Char(string="Title", required=True, store=True)
-    # state = fields.Selection(string='Status', selection=[('other', 'Other'),
-    #                                                     ('male', 'Male'),
-    #                                                     ('female', 'Female')],
-    #                                                 default='other')s
     author_id = fields.Many2one('library.author',
                                 string='Author',
                                 ondelete="restrict")
@@ -19,25 +17,49 @@ class LibraryBook(models.Model):
     number_of_pages = fields.Integer(string="Number Of Pages")
     producer_id = fields.Many2one('library.producer', string="Producer", ondelete="set null")
     publishing_year = fields.Char(string="Publishing Year")
-    amount = fields.Integer(string='Amount', required=True)
+    amount = fields.Integer(string='Amount', required=True, group_operator='sum')
     image = fields.Binary(string="Image", attachment=True)
+    state = fields.Selection(string='Status', selection=[('still', 'Still'),
+                                                        ('over', 'Over')], default='still')
     note = fields.Text(string="Note")
+    sequence = fields.Integer(string='Sequence', default=1)
     
     @api.model_create_multi
     def create(self, vals_list):
-        print(vals_list)
+        """Override default Odoo create function and extend."""
+        for vals in vals_list:
+            if vals.get('title'):
+                vals["title"] = vals["title"].title()
         return models.Model.create(self, vals_list)
-    
-    
-class LibraryLoanBook(models.Model):
-    _inherit = 'library.book'
-    
-    is_borrow = fields.Boolean(string="Is Borrow", default=True)
 
 
-class LibrarySaleBook(models.Model):
+class LibraryBookExtendOther(models.Model):
     _inherit = "library.book"
 
-    price = fields.Integer(string="Price")
-    is_sale = fields.Boolean(string="Is Sale", default=False)
-
+    price = fields.Integer(string="Price", digist=(10, 3))
+    total_price = fields.Float(string="Total Price", digist=(10, 3), compute="_compute_total_price", store=True, group_operator='sum')
+    
+    @api.model
+    def create(self, values):
+        """Override default Odoo create function and extend."""
+        if values.get('title'):
+            values["title"] = values["title"].title()
+        return super(LibraryBookExtendOther, self).create(values)
+    
+    def write(self, values):
+        """Override default Odoo write function and extend."""
+        if values.get('title'):
+            values["title"] = values["title"].title()
+        return super(LibraryBookExtendOther, self).write(values)
+    
+    def unlink(self):
+        """Override default Odoo unlink function and extend."""
+        return super(LibraryBookExtendOther, self).unlink()
+    
+    @api.depends('price', 'amount')
+    def _compute_total_price(self):
+        for r in self:
+            if r.amount > 0: 
+                r.total_price = r.price * r.amount
+            else:
+                r.total_price = False

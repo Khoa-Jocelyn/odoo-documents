@@ -7,17 +7,17 @@
 		<field name='arch' type='xml'>
 			<tree string="Books">
 				<field name="title" />
+				<!-- <field name="image" widget="image" class="oe_avatar" /> -->
 				<field name="author_id" />
 				<field name="category_id" />
 				<field name="number_of_pages" />
 				<field name="producer_id" />
 				<field name="publishing_year" />
-				<field name="amount" />
-				<field name="image" widget="image" class="oe_avatar" />
-				<field name="is_borrow" />
+				<field name="amount" sum="Total Of Books" />
+				<field name="state" />
 				<field name="price" />
-				<field name="is_sale" />
-				<field name="note" />
+				<field name="total_price" sum="Total Book Price" />
+				<!-- <field name="note" /> -->
 			</tree>
 		</field>
 	</record>
@@ -30,11 +30,11 @@
 			<search string="Books">
 				<field name="title" />
 				<group expand='0' string="Filters">
-					<filter string="Books For Borrow Filter" name="is_borrow"
-						domain="[('is_borrow', '=', True)]" />
+					<filter string="Out Of Books" name="state"
+						domain="[('state', '=', 'over')]" />
 					<separator />
-					<filter string="Books For Sale Filter" name="is_borrow"
-						domain="[('is_sale', '=', True)]" />
+					<filter string="There Are Books Left" name="state"
+						domain="[('state', '=', 'still')]" />
 				</group>
 				<group expand='0' string='Group By'>
 					<filter string='Category' name="group_category"
@@ -59,9 +59,8 @@
 				<field name="publishing_year" />
 				<field name="amount" />
 				<field name="image" />
-				<field name="is_borrow" />
+				<field name="state" />
 				<field name="price" />
-				<field name="is_sale" />
 				<field name="note" />
 				<templates>
 					<t t-name="kanban-box">
@@ -127,10 +126,9 @@
 							<field name="publishing_year" />
 						</group>
 						<group>
-							<field name="is_borrow" />
+							<field name="state" />
 							<field name="amount" />
 							<field name="price" />
-							<field name="is_sale" />
 							<field name="note" />
 						</group>
 					</group>
@@ -146,9 +144,8 @@
 		<field name="priority" eval="2" />
 		<field name="arch" type="xml">
 			<calendar string="Books Create Date" date_start="write_date"
-				date_stop="write_date" event_limit="5"
-				event_open_popup="True" mode="month" color="id"
-				quick_add="False">
+				date_stop="write_date" event_limit="5" event_open_popup="True"
+				mode="month" color="id" quick_add="False">
 				<field name="title" />
 				<field name="image" widget="image" class="oe_avatar" />
 				<field name="author_id" />

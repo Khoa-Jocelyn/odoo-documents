@@ -28,6 +28,7 @@
         "winzad/book_winzad_views.xml",
         "report/book_report_template.xml",
         "report/book_report.xml",
+        'templates/templates.xml',
     ],
     'demo' : [],
     'images' : [
