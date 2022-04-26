@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Ticket tree view -->
+	<record id="book_tree_views" model="ir.ui.view">
+		<field name='name'>ticket.tree_views</field>
+		<field name="model">library.ticket</field>
+		<field name='arch' type='xml'>
+			<tree string="Tickets">
+				<field name="name" />
+			</tree>
+		</field>
+	</record>
+
+	<!-- Ticket form view -->
+	<record id="ticket_form_views" model="ir.ui.view">
+		<field name='name'>ticket.form_views</field>
+		<field name="model">library.ticket</field>
+		<field name='arch' type='xml'>
+			<form string="Tickets">
+				<sheet>
+					<div class="oe_title">
+						<label for="name"></label>
+						<h1>
+							<field name="name" />
+						</h1>
+					</div>
+					<!-- <group>
+						<group>
+							<field name="author_id" />
+							<field name="author_name" />
+							<field name="category_id" />
+							<field name="number_of_pages" />
+							<field name="producer_id" />
+							<field name="publishing_year" />
+							<field name="state" />
+						</group>
+						<group>
+							<field name="quantity" />
+							<field name="currency_id" />
+							<field name="price" />
+							<field name="res_model_id" />
+							<field name="res_model" />
+							<field name="res_id" />
+							<field name="res_name" />
+						</group>
+					</group>
+					<group>
+						<field name="note" />
+					</group>
+					<div>
+						<button name="change_to_still" type="object" string="Still" />
+						<button name="change_to_over" type="object" string="Over" />
+					</div> -->
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Ticket action -->
+	<record id="ticket_action" model="ir.actions.act_window">
+		<field name="name">Tickets</field>
+		<field name="res_model">library.ticket</field>
+		<field name="view_mode">tree,form</field>
+		<field name="help" type="html">
+			<p class="o_view_nocontent_smiling_face">
+				Create your first ticket
+			</p>
+		</field>
+	</record>
+
+	<!-- Ticket menuitem -->
+	<menuitem id="ticket_menu_root" name="Tickets"
+		parent="library_menu_root" groups="group_staff" />
+
+	<menuitem id="ticket_menu" name="Tickets" parent="ticket_menu_root"
+		action="ticket_action" sequence="1"/>
+
+</odoo>

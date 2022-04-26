@@ -22,6 +22,8 @@
         "views/author_views.xml",
         "views/category_views.xml",
         "views/producer_views.xml",
+        "views/ticket_views.xml",
+        "views/customer_views.xml",
         "data/author_data.xml",
         "data/category_data.xml",
         "data/producer_data.xml",

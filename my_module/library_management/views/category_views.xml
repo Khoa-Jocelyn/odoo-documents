@@ -6,7 +6,7 @@
 		<field name='arch' type='xml'>
 			<tree string="Categorys">
 				<field name="name" />
-				<field name="book_id" />
+				<field name="book_ids" />
 				<field name="note" />
 			</tree>
 		</field>
@@ -26,7 +26,7 @@
 					</div>
 					<notebook>
 						<page string="Books">
-							<field name="book_id" />
+							<field name="book_ids" />
 						</page>
 					</notebook>
 					<group>

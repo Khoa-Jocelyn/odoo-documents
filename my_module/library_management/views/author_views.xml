@@ -11,7 +11,7 @@
 				<field name="gender" />
 				<field name="introduce" />
 				<field name="image" />
-				<field name="book_id" />
+				<field name="book_ids" />
 				<field name="note" />
 			</tree>
 		</field>
@@ -37,22 +37,19 @@
 					</group>
 					<notebook>
 						<page string="Introduce">
-							<field name="introduce" />
+							<field name="introduce" widget="html" />
 						</page>
 						<page string="Books">
-							<field name="book_id" mode="tree">
+							<field name="book_ids" mode="tree">
 								<tree editable="bottom">
 									<field name="title" />
-									<field name="author_id" />
 									<field name="category_id" />
 									<field name="number_of_pages" />
 									<field name="producer_id" />
 									<field name="publishing_year" />
-									<field name="amount" />
-									<field name="image" widget="image" class="oe_avatar" />
+									<field name="quantity" />
 									<field name="state" />
 									<field name="price" />
-									<field name="note" />
 								</tree>
 							</field>
 						</page>
@@ -60,14 +57,18 @@
 					<group>
 						<field name="note" />
 					</group>
-					<button name="get_all_book_ids" type="object"
-						string="Log All Book Ids" />
-					<button name="get_all_book_names" type="object"
-						string="Log All Book Names" />
-					<button name="sort_book_ids" type="object"
-						string="Sort Book Ids" />
-					<button name="group_by_author" type="object"
-						string="Group By Book To Author" />
+					<button name="test_filtered" type="object"
+						string="Filted" />
+					<button name="test_mapped" type="object"
+						string="Mapped" />
+					<button name="test_sorted" type="object"
+						string="Sorted" />
+					<button name="test_read_group" type="object"
+						string="Read Group" />
+					<button name="action_state_over" type="object"
+						string="Context State Over" />
+					<button name="action_state_still" type="object"
+						string="Context State Still" />
 				</sheet>
 			</form>
 		</field>
@@ -84,6 +85,6 @@
 			</p>
 		</field>
 	</record>
-	<menuitem id="author_menu" name="Author"
+	<menuitem id="author_menu" name="Authors"
 		parent="book_menu_root" action="author_action" groups="group_manager" />
 </odoo>
