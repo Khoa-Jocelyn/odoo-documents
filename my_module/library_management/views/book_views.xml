@@ -13,15 +13,10 @@
 				<field name="number_of_pages" />
 				<field name="producer_id" />
 				<field name="publishing_year" />
-				<field name="quantity" sum="Total Of Books" />
+				<field name="amount" sum="Total Of Books" />
 				<field name="state" />
-				<!-- <field name="currency_id" /> -->
 				<field name="price" />
 				<field name="total_price" sum="Total Book Price" />
-				<!-- <field name="res_model_id" /> -->
-				<!-- <field name="res_model" /> -->
-				<!-- <field name="res_id" /> -->
-				<!-- <field name="res_name"/> -->
 				<!-- <field name="note" /> -->
 			</tree>
 		</field>
@@ -62,7 +57,7 @@
 				<field name="number_of_pages" />
 				<field name="producer_id" />
 				<field name="publishing_year" />
-				<field name="quantity" />
+				<field name="amount" />
 				<field name="image" />
 				<field name="state" />
 				<field name="price" />
@@ -125,30 +120,18 @@
 					<group>
 						<group>
 							<field name="author_id" />
-							<!-- <field name="author_name" /> -->
 							<field name="category_id" />
 							<field name="number_of_pages" />
 							<field name="producer_id" />
 							<field name="publishing_year" />
-							<field name="state" />
 						</group>
 						<group>
-							<field name="quantity" />
-							<field name="currency_id" />
+							<field name="state" />
+							<field name="amount" />
 							<field name="price" />
-							<field name="res_model_id" />
-							<field name="res_model" />
-							<field name="res_id" />
-							<field name="res_name" />
+							<field name="note" />
 						</group>
 					</group>
-					<group>
-						<field name="note" />
-					</group>
-					<div>
-						<button name="change_to_still" type="object" string="Still" />
-						<button name="change_to_over" type="object" string="Over" />
-					</div>
 				</sheet>
 			</form>
 		</field>
@@ -160,9 +143,9 @@
 		<field name="model">library.book</field>
 		<field name="priority" eval="2" />
 		<field name="arch" type="xml">
-			<calendar string="Books Create Date"
-				date_start="create_date" date_stop="write_date" event_limit="5"
-				event_open_popup="True" mode="month" color="id" quick_add="False">
+			<calendar string="Books Create Date" date_start="write_date"
+				date_stop="write_date" event_limit="5" event_open_popup="True"
+				mode="month" color="id" quick_add="False">
 				<field name="title" />
 				<field name="image" widget="image" class="oe_avatar" />
 				<field name="author_id" />

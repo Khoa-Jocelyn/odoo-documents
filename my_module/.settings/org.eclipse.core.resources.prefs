@@ -1,6 +1,11 @@
 eclipse.preferences.version=1
 encoding//library_management/__init__.py=utf-8
+encoding//library_management/controllers/__init__.py=utf-8
+encoding//library_management/controllers/controllers.py=utf-8
 encoding//library_management/models/__init__.py=utf-8
 encoding//library_management/models/author.py=utf-8
 encoding//library_management/models/book.py=utf-8
-encoding//library_management/winzad/book_winzad.py=utf-8
+encoding//library_management/models/category.py=utf-8
+encoding//library_management/models/producer.py=utf-8
+encoding//library_management/tests/test_book_state.py=utf-8
+encoding//library_management/wizard/book_winzad.py=utf-8

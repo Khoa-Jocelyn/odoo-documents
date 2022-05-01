@@ -6,7 +6,3 @@ access_library_category_manager,access.library_category.manager,model_library_ca
 access_library_author_manager,access.library_author.manager,model_library_author,group_manager,1,1,1,1
 access_library_producer_manager,access.library_producer.manager,model_library_producer,group_manager,1,1,1,1
 access_library_book_winzad_manager,access.library.book.winzad.manager,model_library_book_winzad,group_manager,1,1,1,1
-access_library_ticket_manager,access.library_book.ticket,model_library_ticket,group_manager,1,1,1,1
-access_library_ticket_staff,access.library_ticket.staff,model_library_ticket,group_staff,1,1,1,0
-access_library_customer_staff,access.library_customer.staff,model_library_customer,group_staff,1,1,1,0
-access_library_customer_manager,access.library_customer.manager,model_library_customer,group_manager,1,1,1,1

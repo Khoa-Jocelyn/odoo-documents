@@ -31,8 +31,8 @@
 							<span t-field="doc.publishing_year" />
 						</li>
 						<li>
-							Quantity:
-							<span t-field="doc.quantity" />
+							Amount:
+							<span t-field="doc.amount" />
 						</li>
 						<li>
 							Description:

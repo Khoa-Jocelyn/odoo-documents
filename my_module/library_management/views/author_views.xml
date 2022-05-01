@@ -11,7 +11,7 @@
 				<field name="gender" />
 				<field name="introduce" />
 				<field name="image" />
-				<field name="book_ids" />
+				<field name="book_id" />
 				<field name="note" />
 			</tree>
 		</field>
@@ -37,19 +37,22 @@
 					</group>
 					<notebook>
 						<page string="Introduce">
-							<field name="introduce" widget="html" />
+							<field name="introduce" />
 						</page>
 						<page string="Books">
-							<field name="book_ids" mode="tree">
+							<field name="book_id" mode="tree">
 								<tree editable="bottom">
 									<field name="title" />
+									<field name="author_id" />
 									<field name="category_id" />
 									<field name="number_of_pages" />
 									<field name="producer_id" />
 									<field name="publishing_year" />
-									<field name="quantity" />
+									<field name="amount" />
+									<field name="image" widget="image" class="oe_avatar" />
 									<field name="state" />
 									<field name="price" />
+									<field name="note" />
 								</tree>
 							</field>
 						</page>
@@ -57,18 +60,6 @@
 					<group>
 						<field name="note" />
 					</group>
-					<button name="test_filtered" type="object"
-						string="Filted" />
-					<button name="test_mapped" type="object"
-						string="Mapped" />
-					<button name="test_sorted" type="object"
-						string="Sorted" />
-					<button name="test_read_group" type="object"
-						string="Read Group" />
-					<button name="action_state_over" type="object"
-						string="Context State Over" />
-					<button name="action_state_still" type="object"
-						string="Context State Still" />
 				</sheet>
 			</form>
 		</field>
@@ -85,6 +76,6 @@
 			</p>
 		</field>
 	</record>
-	<menuitem id="author_menu" name="Authors"
+	<menuitem id="author_menu" name="Author"
 		parent="book_menu_root" action="author_action" groups="group_manager" />
 </odoo>

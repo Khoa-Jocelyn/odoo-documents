@@ -7,8 +7,7 @@
 			<tree string="Producers">
 				<field name="name" />
 				<field name="infor" />
-				<field name="book_ids" />
-				<field name="mobile" />
+				<field name="book_id" />
 				<field name="note" />
 			</tree>
 		</field>
@@ -31,11 +30,10 @@
 							<field name="infor" />
 						</page>
 						<page string="Books">
-							<field name="book_ids" />
+							<field name="book_id" />
 						</page>
 					</notebook>
 					<group>
-						<field name="mobile" />
 						<field name="note" />
 					</group>
 				</sheet>
