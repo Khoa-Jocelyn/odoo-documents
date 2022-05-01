@@ -4,7 +4,7 @@
 			<field name="name">user.unlink.log.tree</field>
 			<field name="model">user.unlink.log</field>
 			<field name="arch" type="xml">
-				<tree string="Unlink Logs">
+				<tree string="User Unlink Logs">
 					<field name="datetime" />
 					<field name="model_id" />
 					<field name="res_model" />
@@ -17,22 +17,39 @@
 			</field>
 		</record>
 
-		<record model="ir.ui.view" id="user_assignment_view_search">
-			<field name="name">user.assignment.search</field>
-			<field name="model">user.assignment</field>
+		<record model="ir.ui.view" id="user_unlink_log_view_form">
+			<field name="name">user.unlink.log.form</field>
+			<field name="model">user.unlink.log</field>
 			<field name="arch" type="xml">
-				<search string="Search User Assignment">
-					<field name="model_id" />
-					<field name="res_name" />
-					<separator />
-					<field name="date_start" />
-					<field name="date_end" />
-					<separator />
-					<field name="user_id" />
-					<separator />
-					<field name="assigned_by_user_id" />
+				<form string="User Unlink Logs">
+					<sheet>
+						<group>
+							<group>
+								<field name="datetime" />
+								<field name="res_id" />
+								<field name="res_name" />
+								<field name="record_infor" />
+							</group>
+							<group>
+								<field name="model_id" />
+								<field name="res_model" />
+								<field name="user_id" />
+								<field name="company_id" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="user_unlink_log_view_search">
+			<field name="name">user.unlink.log.search</field>
+			<field name="model">user.unlink.log</field>
+			<field name="arch" type="xml">
+				<search string="Search User Unlink Log">
+					<field name="datetime" />
 					<separator groups="base.group_multi_company" />
-					<field name="company_id" groups="base.group_multi_company" />
+					<field name="company_id" />
 					<group expand="0" string="Group By">
 						<filter string="Model" name="grp_model_id" domain="[]"
 							context="{'group_by':'model_id'}" />
@@ -40,18 +57,14 @@
 						<filter string="User" name="grp_user_id" domain="[]"
 							context="{'group_by':'user_id'}" />
 						<separator />
-						<filter string="Assigned By" name="grp_assigned_by_user_id"
-							domain="[]" context="{'group_by':'assigned_by_user_id'}" />
+						<filter string="Unlink By" name="grp_unlink_by_user_id"
+							domain="[]" context="{'group_by':'user_id'}" />
 						<separator />
-						<filter string="Assigned 
-			Date" name="grp_date_start"
-							domain="[]" context="{'group_by':'date_start'}" />
-						<filter string="Unassigned Date" name="grp_date_end"
-							domain="[]" context="{'group_by':'date_end'}" />
+						<filter string="Unlink Datetime" name="grp_unlink_datetime"
+							domain="[]" context="{'group_by':'datetime'}" />
 						<separator />
 						<filter string="Company" name="grp_company_id" domain="[]"
-							context="{'group_by':'company_id'}"
-							groups="base.group_multi_company" />
+							context="{'group_by':'company_id'}" />
 					</group>
 				</search>
 			</field>
@@ -61,7 +74,7 @@
 			id="action_user_unlink_log">
 			<field name="name">User Unlink Log</field>
 			<field name="res_model">user.unlink.log</field>
-			<field name="view_mode">tree,form</field>
+			<field name="view_mode">tree,form,search</field>
 		</record>
 
 		<menuitem name="User Unlink" sequence="2"
